@@ -27,14 +27,14 @@ namespace SnakeGame.Checkers
             }
             return appleIsFound;
         }
-        public bool CheckIsCollectedItem(ISpawner spawner, GameEntity snake)
+        public bool CheckIsCollectedItem(Point itemPos, GameEntity entity)
         {
-            Point headCoords = snake.EntityCoords[0];
-            bool coincide = headCoords.X == spawner.SpawnedItemPosition.X && headCoords.Y == spawner.SpawnedItemPosition.Y;
+            Point headCoords = entity.EntityCoords[0];
+            bool coincide = headCoords.X == itemPos.X && headCoords.Y == itemPos.Y;
             if (coincide)
             {
                 _soundManager.PlaySound("mixkit-winning-a-coin-video-game-2069.wav");
-                snake.CurrEntityLevel.ClearTheCell(spawner.SpawnedItemPosition.Y, spawner.SpawnedItemPosition.X);
+                entity.CurrEntityLevel.ClearTheCell(itemPos.Y, itemPos.X);
             }
             return coincide;
         }

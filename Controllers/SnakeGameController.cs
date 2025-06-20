@@ -98,14 +98,14 @@ namespace SnakeGame.Controllers
         {
             while (!token.IsCancellationRequested)
             {
-                GameRenderData renderData = new(
+                GameRenderData currRenderData = new(
                     _entity.CurrEntityLevel.Map,
                     _entity.EntityCoords,
                     _entity.CurrApplesCollected,
                     _entity.CurrEntityLevel.ApplesToWin,
                     _entity.CurrEntityLevel.LevelNumber
                 );
-                _gameUI.DrawFrame(renderData, this);
+                _gameUI.DrawFrame(currRenderData, this);
                 Thread.Sleep(10);
                 _entity.Move(_moveDirection);
             }
@@ -156,7 +156,7 @@ namespace SnakeGame.Controllers
         }
         public Point TrySpawnApple()
         {
-            bool isEated = _checker.CheckIsCollectedItem(_spawner, _entity);
+            bool isEated = _checker.CheckIsCollectedItem(_spawner.SpawnedItemPosition, _entity);
             if (isEated) _entity.Grow();
             return _spawner.Spawn(_entity.CurrEntityLevel, _entity);
         }
