@@ -56,7 +56,7 @@ namespace SnakeGame.UI.Renderers.DefaultImplementations
                     {
                         "*" => ConsoleColor.DarkGreen,
                         "@" => ConsoleColor.Green,
-                        "●" => ConsoleColor.Red,
+                        "●" => ConsoleColor.Magenta,
                         _ => ConsoleColor.White
                     };
                     Console.Write($"{curr} ");
