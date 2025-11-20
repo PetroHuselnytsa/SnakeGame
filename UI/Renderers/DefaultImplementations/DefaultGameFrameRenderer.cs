@@ -54,7 +54,7 @@ namespace SnakeGame.UI.Renderers.DefaultImplementations
 
                     Console.ForegroundColor = curr switch
                     {
-                        "*" => ConsoleColor.DarkGreen,
+                        "*" => ConsoleColor.Green,
                         "@" => ConsoleColor.Green,
                         "●" => ConsoleColor.Red,
                         _ => ConsoleColor.White
