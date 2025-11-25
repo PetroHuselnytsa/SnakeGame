@@ -1,4 +1,4 @@
-﻿using System.Text;
+using System.Text;
 using SnakeGame.Controllers;
 using SnakeGame.Structs;
 using SnakeGame.UI.Renderers.Interfaces;
@@ -54,8 +54,8 @@ namespace SnakeGame.UI.Renderers.DefaultImplementations
 
                     Console.ForegroundColor = curr switch
                     {
-                        "*" => ConsoleColor.DarkGreen,
-                        "@" => ConsoleColor.Green,
+                        "*" => ConsoleColor.DarkRed,
+                        "@" => ConsoleColor.Red,
                         "●" => ConsoleColor.Red,
                         _ => ConsoleColor.White
                     };
