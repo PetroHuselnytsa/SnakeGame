@@ -54,9 +54,9 @@ namespace SnakeGame.UI.Renderers.DefaultImplementations
 
                     Console.ForegroundColor = curr switch
                     {
-                        "*" => ConsoleColor.DarkMagenta,
-                        "@" => ConsoleColor.Magenta,
-                        "●" => ConsoleColor.Red,
+                        "*" => ConsoleColor.DarkRed,
+                        "@" => ConsoleColor.Red,
+                        "●" => ConsoleColor.Yellow,
                         _ => ConsoleColor.White
                     };
                     Console.Write($"{curr} ");
