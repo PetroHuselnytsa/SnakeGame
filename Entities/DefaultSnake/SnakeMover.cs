@@ -86,9 +86,9 @@ namespace SnakeGame.Entities.DefaultSnake
             int indexOfStar = _entityCoords.IndexOf(new Point(headPoint.X + 1, headPoint.Y));
             return indexOfStar == 1;
         }
-        private bool IsBlockedUp(Point head) => _level.Map[head.Y - 1, head.X] == "*";
-        private bool IsBlockedDown(Point head) => _level.Map[head.Y + 1, head.X] == "*";
-        private bool IsBlockedLeft(Point head) => _level.Map[head.Y, head.X - 1] == "*";
-        private bool IsBlockedRight(Point head) => _level.Map[head.Y, head.X + 1] == "*";
+        private bool IsBlockedUp(Point head) => _level.Map[head.Y - 1, head.X] == "~";
+        private bool IsBlockedDown(Point head) => _level.Map[head.Y + 1, head.X] == "~";
+        private bool IsBlockedLeft(Point head) => _level.Map[head.Y, head.X - 1] == "~";
+        private bool IsBlockedRight(Point head) => _level.Map[head.Y, head.X + 1] == "~";
     }
 }
