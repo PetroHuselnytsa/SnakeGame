@@ -18,7 +18,7 @@ namespace SnakeGame.Checkers
             {
                 for (int column = 0; column < level.Map.GetLength(1); column++)
                 {
-                    if (level.Map[row, column] == "●")
+                    if (level.Map[row, column] == "+")
                     {
                         appleIsFound = true;
                         break;

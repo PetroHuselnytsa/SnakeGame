@@ -15,7 +15,7 @@ namespace SnakeGame.UI.Renderers.DefaultImplementations
             {
                 for (int x = 0; x < map.GetLength(1); x++)
                 {
-                    if (map[y, x] == "@" || map[y, x] == "*")
+                    if (map[y, x] == "&" || map[y, x] == "*")
                         map[y, x] = " ";
                     if (y == 0 || x == 0 || y == map.GetLength(0) - 1 || x == map.GetLength(1) - 1)
                         map[y, x] = "#";
@@ -26,7 +26,7 @@ namespace SnakeGame.UI.Renderers.DefaultImplementations
         private static void PlaceApple(string[,] map, Point applePoint)
         {
             if (applePoint.X == -1 || applePoint.Y == -1) return;
-            map[applePoint.Y, applePoint.X] = "●";
+            map[applePoint.Y, applePoint.X] = "+";
         }
         private static void PlaceSnake(string[,] map, IReadOnlyList<Point> snakeCoords)
         {
@@ -34,7 +34,7 @@ namespace SnakeGame.UI.Renderers.DefaultImplementations
             {
                 int y = snakeCoords[i].Y;
                 int x = snakeCoords[i].X;
-                map[y, x] = i == 0 ? "@" : "*";
+                map[y, x] = i == 0 ? "&" : "*";
             }
         }
         private static void DrawMap(string[,] map, int levelNumber)
@@ -55,8 +55,8 @@ namespace SnakeGame.UI.Renderers.DefaultImplementations
                     Console.ForegroundColor = curr switch
                     {
                         "*" => ConsoleColor.DarkMagenta,
-                        "@" => ConsoleColor.Magenta,
-                        "●" => ConsoleColor.Red,
+                        "&" => ConsoleColor.Magenta,
+                        "+" => ConsoleColor.Red,
                         _ => ConsoleColor.White
                     };
                     Console.Write($"{curr} ");

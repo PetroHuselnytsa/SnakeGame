@@ -14,7 +14,7 @@ namespace SnakeGame.Levels
         {
             if (IsValidIndex(rowIndex, columnIndex))
             {
-                if (Map[rowIndex, columnIndex] == "●")
+                if (Map[rowIndex, columnIndex] == "+")
                     Map[rowIndex, columnIndex] = " ";
             }
         }
@@ -39,7 +39,7 @@ namespace SnakeGame.Levels
                 for (int col = 0; col < Map.GetLength(1); col++)
                 {
                     string currSymbol = Map![row, col];
-                    if (currSymbol == "@")
+                    if (currSymbol == "&")
                     {
                         _snakePoints.Add(new Point(col, row));
                         do
