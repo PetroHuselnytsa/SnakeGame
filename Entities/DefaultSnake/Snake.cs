@@ -47,7 +47,7 @@ namespace SnakeGame.Entities.DefaultSnake
         }
         public override void Grow()
         {
-            CurrApplesCollected++;
+            CurrApplesCollected += 2;
             Point lastCoords = EntityCoords[^1];
             _entityCoords.Add(new Point(lastCoords.X, lastCoords.Y + 1));
         }

@@ -15,7 +15,7 @@ namespace SnakeGame.UI.Renderers.DefaultImplementations
             {
                 for (int x = 0; x < map.GetLength(1); x++)
                 {
-                    if (map[y, x] == "&" || map[y, x] == "*")
+                    if (map[y, x] == "&" || map[y, x] == "~")
                         map[y, x] = " ";
                     if (y == 0 || x == 0 || y == map.GetLength(0) - 1 || x == map.GetLength(1) - 1)
                         map[y, x] = "#";
@@ -34,7 +34,7 @@ namespace SnakeGame.UI.Renderers.DefaultImplementations
             {
                 int y = snakeCoords[i].Y;
                 int x = snakeCoords[i].X;
-                map[y, x] = i == 0 ? "&" : "*";
+                map[y, x] = i == 0 ? "&" : "~";
             }
         }
         private static void DrawMap(string[,] map, int levelNumber)
@@ -54,7 +54,7 @@ namespace SnakeGame.UI.Renderers.DefaultImplementations
 
                     Console.ForegroundColor = curr switch
                     {
-                        "*" => ConsoleColor.DarkMagenta,
+                        "~" => ConsoleColor.DarkMagenta,
                         "&" => ConsoleColor.Magenta,
                         "+" => ConsoleColor.Red,
                         _ => ConsoleColor.White

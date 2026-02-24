@@ -46,7 +46,7 @@ namespace SnakeGame.Levels
                         {
                             row++;
                             currSymbol = Map[row, col];
-                            if (currSymbol != "*")
+                            if (currSymbol != "~")
                                 break;
 
                             _snakePoints.Add(new Point(col, row));
